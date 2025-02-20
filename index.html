@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launchpad Crypto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🚀 CryptoLaunch</div>
+        <nav>
+            <ul>
+                <li><a href="presale.html">Pré-venda</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="roadmap.html">Roadmap</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Invista na Próxima Grande Crypto 🚀</h1>
+            <p>Aproveite a pré-venda exclusiva e faça parte do futuro das finanças descentralizadas.</p>
+            <a href="#presale" class="btn">Participar da Pré-venda</a>
+        </div>
+    </section>
+
+    <section id="presale" class="presale">
+        <h2>Pré-venda Aberta</h2>
+        <p>Garanta seus tokens agora antes do lançamento oficial.</p>
+        <div class="counter">⏳ Tempo restante: <span id="countdown">00:00:00</span></div>
+        <a href="#" class="btn">Comprar Tokens</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Sobre o Projeto</h2>
+        <p>CryptoLaunch é uma plataforma que permite investidores participarem de ICOs seguros e confiáveis.</p>
+        <div class="features">
+            <div class="feature-card">
+                <h3>🔥 Segurança</h3>
+                <p>Smart Contracts auditados para máxima transparência.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌎 Global</h3>
+                <p>Acesso em qualquer lugar do mundo sem barreiras.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 Oportunidade</h3>
+                <p>Invista antes do mercado e maximize seus lucros.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CryptoLaunch - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Contagem regressiva para a pré-venda
+        function startCountdown() {
+            const deadline = new Date("Feb 28, 2025 23:59:59").getTime();
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const timeLeft = deadline - now;
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    document.getElementById("countdown").innerText = "Encerrado";
+                    return;
+                }
+
+                const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+                const seconds = Math.floor((timeLeft / 1000) % 60);
+
+                document.getElementById("countdown").innerText = 
+                    `${hours}:${minutes}:${seconds}`;
+            }, 1000);
+        }
+        startCountdown();
+    </script>
+
+</body>
+</html>
